@@ -8,7 +8,7 @@ services:
     volumes:
       - .:/app
     ports:
-      - '1001:1001'  # Solo uno si no necesitas acceso múltiple
+      - '1001'  # Solo uno si no necesitas acceso múltiple
     environment:
       - OLLAMA_HOST=host.docker.internal
     # labels:
