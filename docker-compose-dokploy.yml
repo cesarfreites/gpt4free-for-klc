@@ -11,12 +11,3 @@ services:
       - '1001'  # Solo uno si no necesitas acceso múltiple
     environment:
       - OLLAMA_HOST=host.docker.internal
-    # labels:
-    #   - traefik.enable=true
-    #   - traefik.http.routers.g4f.rule=Host(`gpt4free.cloud.karlincoder.com`)  
-    #   - traefik.http.routers.g4f.entrypoints=websecure
-    #   - traefik.http.routers.g4f.tls.certResolver=letsencrypt
-    #   - traefik.http.services.g4f.loadbalancer.server.port=1001  
-networks:
-  dokploy-network:
-    external: true
