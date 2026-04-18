@@ -16,7 +16,7 @@ services:
       - traefik.http.routers.g4f.rule=Host(`gpt4free.cloud.karlincoder.com`)  # Ajusta el host
       - traefik.http.routers.g4f.entrypoints=websecure
       - traefik.http.routers.g4f.tls.certResolver=letsencrypt
-      - traefik.http.services.g4f.loadbalancer.server.port=8080  # ← Puerto interno real
+      - traefik.http.services.g4f.loadbalancer.server.port=1001  # ← Puerto interno real
 networks:
   dokploy-network:
     external: true
