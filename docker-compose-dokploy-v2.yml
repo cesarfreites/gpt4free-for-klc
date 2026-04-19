@@ -8,6 +8,9 @@ services:
       - "1337:1337"
       - "8080:8080"
       - "7900:7900"
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
     volumes:
       - ./har_and_cookies:/app/har_and_cookies
       - ./generated_media:/app/generated_media
