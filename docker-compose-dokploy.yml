@@ -8,6 +8,11 @@ services:
     volumes:
       - .:/app
     ports:
-      - 3000
+      - 3000:3000
     environment:
       - OLLAMA_HOST=host.docker.internal
+    networks:
+      - my_network
+networks:
+  my_network:
+    external: true
