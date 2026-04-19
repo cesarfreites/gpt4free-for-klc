@@ -1,6 +1,5 @@
 services:
   gpt4free:
-    image: hlohaus789/g4f:latest-slim
     build:
       context: .
       dockerfile: docker/Dockerfile-slim
