@@ -29,7 +29,8 @@ WORKDIR $G4F_DIR
 ENV HOME /home/$G4F_USER
 ENV PATH "${HOME}/.local/bin:${PATH}"
 
-RUN git clone https://github.com/xtekky/gpt4free.git $G4F_DIR \
+RUN git clone https://github.com/cesarfreites/gpt4free-for-klc.git $G4F_DIR \
+ && pip install --no-cache-dir "numpy<2.0.0" \
  && pip install --no-cache-dir -r requirements-slim.txt
 
 CMD python -m etc.tool.update && docker/update.sh & docker/start.sh
