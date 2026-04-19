@@ -1,0 +1,27 @@
+services:
+  gpt4free:
+    image: hlohaus789/g4f:latest
+    shm_size: 2gb
+    environment:
+      - OLLAMA_HOST=host.docker.internal
+    ports:
+      - "1337:1337"
+      - "8080:8080"
+      - "7900:7900"
+    volumes:
+      - ./har_and_cookies:/app/har_and_cookies
+      - ./generated_media:/app/generated_media
+    networks:
+      - dokploy-network
+      - default
+    labels:
+      - traefik.docker.network=dokploy-network
+      - traefik.http.routers.ai-servers-gpt4free-idgggh-6-web.rule=Host(`g4f.karlincoder.com`)
+      - traefik.http.routers.ai-servers-gpt4free-idgggh-6-web.entrypoints=web
+      - traefik.http.services.ai-servers-gpt4free-idgggh-6-web.loadbalancer.server.port=8080
+      - traefik.http.routers.ai-servers-gpt4free-idgggh-6-web.service=ai-servers-gpt4free-idgggh-6-web
+      - traefik.enable=true
+
+networks:
+  dokploy-network:
+    external: true
