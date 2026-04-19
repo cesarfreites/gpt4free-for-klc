@@ -4,6 +4,7 @@ services:
       context: .
       dockerfile: docker/Dockerfile-slim
     shm_size: 2gb
+    user: "root"
     environment:
       - OLLAMA_HOST=host.docker.internal
     ports:
