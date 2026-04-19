@@ -7,10 +7,6 @@ services:
     user: "root"
     environment:
       - OLLAMA_HOST=host.docker.internal
-    ports:
-      - "1337:1337"
-      - "8080:8080"
-      - "7900:7900"
     volumes:
       - ./har_and_cookies:/app/har_and_cookies
       - ./generated_media:/app/generated_media
